@@ -12,7 +12,7 @@ class MainNetworkService {
     private init () {}
     static let shared = MainNetworkService()
     
-    func fetchWeather(lon: Double, lat: Double, completion: @escaping (Any)->()) {
+    func fetchWeather(lon: Double, lat: Double, completion: @escaping (Weather)->()) {
         guard let url = URL(string: "https://api.weather.yandex.ru/v2/forecast?lat=\(lat)&lon=\(lon)&limit=1&hours=false&extra=false") else { return }
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["X-Yandex-API-Key": "89e57fa5-5c13-469c-86fe-3982efd73007"], interceptor: nil, requestModifier: nil).responseJSON {[weak self] response in
             switch response.result {

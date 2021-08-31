@@ -11,15 +11,10 @@ import UIKit
 class MainViewController: UIViewController {
 
     private let searchController = UISearchController()
-    //private let longitudeAndLatitudeArray = []()
+    private let longitudeAndLatitudeArray:[(lat: Double, lon: Double)] = [(43.02, 44.67),(55.75396, 37.620393),(55.0166667, 82.9333333),(55.4727, 49.0652),(59.57, 30.19),(43.3507, 39.4313),(55.4727, 49.0652),(55.4727, 49.0652),(55.4727, 49.0652),(55.4727, 49.0652),(55.4727, 49.0652)]
     private var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        MainNetworkService.shared.fetchWeather(lon: 55.75396, lat: 37.620393) {weather in
-            DispatchQueue.main.async {
-                print(weather)
-            }
-        }
         setupNavigationBar()
         setupTableView()
     }
@@ -34,6 +29,8 @@ class MainViewController: UIViewController {
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
+        tableView.register(CityCell.self, forCellReuseIdentifier: CityCell.reuseId)
+        tableView.rowHeight = 100
         tableView.dataSource = self
         tableView.delegate = self
         self.view.addSubview(tableView)
@@ -56,7 +53,14 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CityCell")
+        let cell = CityCell(style: .default, reuseIdentifier: CityCell.reuseId)
+        let lat = longitudeAndLatitudeArray[indexPath.row].lat
+        let lon = longitudeAndLatitudeArray[indexPath.row].lon
+        MainNetworkService.shared.fetchWeather(lon: lon, lat: lat) {weather in
+            DispatchQueue.main.async {
+                cell.configure(weather: weather)
+            }
+        }
         return cell
     }
     

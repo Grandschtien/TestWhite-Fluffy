@@ -26,9 +26,9 @@ struct Weather: Codable {
 
 // MARK: - Fact
 struct Fact: Codable {
-    let obsTime, uptime, temp, feelsLike: Int?
+    let obsTime, uptime, temp, feelsLike: Double?
     let icon, condition: String?
-    let cloudness, precType, precProb, precStrength: Int?
+    let cloudness, precType, precProb, precStrength: Double?
     let isThunder: Bool?
     let windSpeed: Double?
     let windDir: String?
@@ -84,7 +84,7 @@ struct Day: Codable {
     let windDir: String?
     let pressureMm, pressurePa, humidity, soilTemp: Double?
     let soilMoisture, precMm: Double?
-    let precProb, precPeriod: Int?
+    let precProb, precPeriod: Double?
     let cloudness: Double?
     let precType: Double?
     let precStrength: Double?
@@ -127,14 +127,14 @@ struct GeoObject: Codable {
 
 // MARK: - Country
 struct Country: Codable {
-    let id: Int?
+    let id: Double?
     let name: String?
 }
 
 // MARK: - Info
 struct Info: Codable {
     let n: Bool?
-    let geoid: Int?
+    let geoid: Double?
     let url: String?
     let lat, lon: Double?
     let tzinfo: Tzinfo?
