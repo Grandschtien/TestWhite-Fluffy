@@ -3,27 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33526A893C4ACD9D2B2A330A /* Pods_TestWhite_Fluffy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22FE961466E97597413595F /* Pods_TestWhite_Fluffy.framework */; };
 		602ECD2926DE51370067B77F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD2826DE51370067B77F /* AppDelegate.swift */; };
 		602ECD2B26DE51370067B77F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD2A26DE51370067B77F /* SceneDelegate.swift */; };
-		602ECD2D26DE51370067B77F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD2C26DE51370067B77F /* ViewController.swift */; };
+		602ECD2D26DE51370067B77F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD2C26DE51370067B77F /* MainViewController.swift */; };
 		602ECD3026DE51370067B77F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602ECD2E26DE51370067B77F /* Main.storyboard */; };
 		602ECD3226DE513B0067B77F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602ECD3126DE513B0067B77F /* Assets.xcassets */; };
 		602ECD3526DE513B0067B77F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602ECD3326DE513B0067B77F /* LaunchScreen.storyboard */; };
+		602ECD4826DE5C010067B77F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD4726DE5C010067B77F /* NetworkService.swift */; };
+		602ECD4B26DE5C700067B77F /* MainNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD4A26DE5C700067B77F /* MainNetworkService.swift */; };
+		602ECD4D26DE5E060067B77F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD4C26DE5E060067B77F /* Weather.swift */; };
+		602ECD4F26DE6F220067B77F /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ECD4E26DE6F220067B77F /* CityCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00EEA4971A97544F677FEA4E /* Pods-TestWhite&Fluffy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWhite&Fluffy.release.xcconfig"; path = "Target Support Files/Pods-TestWhite&Fluffy/Pods-TestWhite&Fluffy.release.xcconfig"; sourceTree = "<group>"; };
 		602ECD2526DE51370067B77F /* TestWhite&Fluffy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestWhite&Fluffy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		602ECD2826DE51370067B77F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		602ECD2A26DE51370067B77F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		602ECD2C26DE51370067B77F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		602ECD2C26DE51370067B77F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		602ECD2F26DE51370067B77F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		602ECD3126DE513B0067B77F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		602ECD3426DE513B0067B77F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		602ECD3626DE513B0067B77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		602ECD4726DE5C010067B77F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		602ECD4A26DE5C700067B77F /* MainNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNetworkService.swift; sourceTree = "<group>"; };
+		602ECD4C26DE5E060067B77F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		602ECD4E26DE6F220067B77F /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		76BB4DA1C5B2F5383486B69C /* Pods-TestWhite&Fluffy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWhite&Fluffy.debug.xcconfig"; path = "Target Support Files/Pods-TestWhite&Fluffy/Pods-TestWhite&Fluffy.debug.xcconfig"; sourceTree = "<group>"; };
+		D22FE961466E97597413595F /* Pods_TestWhite_Fluffy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestWhite_Fluffy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33526A893C4ACD9D2B2A330A /* Pods_TestWhite_Fluffy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D8A52D8ABFB83184B57C324 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D22FE961466E97597413595F /* Pods_TestWhite_Fluffy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		602ECD1C26DE51370067B77F = {
 			isa = PBXGroup;
 			children = (
 				602ECD2726DE51370067B77F /* TestWhite&Fluffy */,
 				602ECD2626DE51370067B77F /* Products */,
+				798D2B5C0665F9034FF8CA01 /* Pods */,
+				0D8A52D8ABFB83184B57C324 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +79,116 @@
 		602ECD2726DE51370067B77F /* TestWhite&Fluffy */ = {
 			isa = PBXGroup;
 			children = (
-				602ECD2826DE51370067B77F /* AppDelegate.swift */,
-				602ECD2A26DE51370067B77F /* SceneDelegate.swift */,
-				602ECD2C26DE51370067B77F /* ViewController.swift */,
-				602ECD2E26DE51370067B77F /* Main.storyboard */,
-				602ECD3126DE513B0067B77F /* Assets.xcassets */,
-				602ECD3326DE513B0067B77F /* LaunchScreen.storyboard */,
-				602ECD3626DE513B0067B77F /* Info.plist */,
+				602ECD3C26DE51730067B77F /* Apllication */,
+				602ECD4126DE51CE0067B77F /* Main */,
 			);
 			path = "TestWhite&Fluffy";
+			sourceTree = "<group>";
+		};
+		602ECD3C26DE51730067B77F /* Apllication */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD4626DE5BEA0067B77F /* NetworkService */,
+				602ECD4026DE51A50067B77F /* SupportingFiles */,
+				602ECD3F26DE51950067B77F /* Model */,
+				602ECD3E26DE51900067B77F /* View */,
+				602ECD3D26DE518A0067B77F /* Controller */,
+			);
+			path = Apllication;
+			sourceTree = "<group>";
+		};
+		602ECD3D26DE518A0067B77F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD2826DE51370067B77F /* AppDelegate.swift */,
+				602ECD2A26DE51370067B77F /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		602ECD3E26DE51900067B77F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD3326DE513B0067B77F /* LaunchScreen.storyboard */,
+				602ECD2E26DE51370067B77F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		602ECD3F26DE51950067B77F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		602ECD4026DE51A50067B77F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD3126DE513B0067B77F /* Assets.xcassets */,
+				602ECD3626DE513B0067B77F /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		602ECD4126DE51CE0067B77F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD4926DE5C5D0067B77F /* NetworkService */,
+				602ECD4526DE51F80067B77F /* Model */,
+				602ECD4426DE51F40067B77F /* View */,
+				602ECD4326DE51E00067B77F /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		602ECD4326DE51E00067B77F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD2C26DE51370067B77F /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		602ECD4426DE51F40067B77F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD4E26DE6F220067B77F /* CityCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		602ECD4526DE51F80067B77F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD4C26DE5E060067B77F /* Weather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		602ECD4626DE5BEA0067B77F /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD4726DE5C010067B77F /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		602ECD4926DE5C5D0067B77F /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				602ECD4A26DE5C700067B77F /* MainNetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		798D2B5C0665F9034FF8CA01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76BB4DA1C5B2F5383486B69C /* Pods-TestWhite&Fluffy.debug.xcconfig */,
+				00EEA4971A97544F677FEA4E /* Pods-TestWhite&Fluffy.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 602ECD3926DE513B0067B77F /* Build configuration list for PBXNativeTarget "TestWhite&Fluffy" */;
 			buildPhases = (
+				6FE48E659209C4E5C1A41E38 /* [CP] Check Pods Manifest.lock */,
 				602ECD2126DE51370067B77F /* Sources */,
 				602ECD2226DE51370067B77F /* Frameworks */,
 				602ECD2326DE51370067B77F /* Resources */,
+				69F22C6F6E16C5470D2AD358 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +258,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69F22C6F6E16C5470D2AD358 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestWhite&Fluffy/Pods-TestWhite&Fluffy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestWhite&Fluffy/Pods-TestWhite&Fluffy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestWhite&Fluffy/Pods-TestWhite&Fluffy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE48E659209C4E5C1A41E38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestWhite&Fluffy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		602ECD2126DE51370067B77F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				602ECD2D26DE51370067B77F /* ViewController.swift in Sources */,
+				602ECD2D26DE51370067B77F /* MainViewController.swift in Sources */,
+				602ECD4B26DE5C700067B77F /* MainNetworkService.swift in Sources */,
+				602ECD4D26DE5E060067B77F /* Weather.swift in Sources */,
 				602ECD2926DE51370067B77F /* AppDelegate.swift in Sources */,
+				602ECD4826DE5C010067B77F /* NetworkService.swift in Sources */,
+				602ECD4F26DE6F220067B77F /* CityCell.swift in Sources */,
 				602ECD2B26DE51370067B77F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,12 +455,13 @@
 		};
 		602ECD3A26DE513B0067B77F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76BB4DA1C5B2F5383486B69C /* Pods-TestWhite&Fluffy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PLUM5QCSG5;
-				INFOPLIST_FILE = "TestWhite&Fluffy/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TestWhite&Fluffy/Apllication/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +475,13 @@
 		};
 		602ECD3B26DE513B0067B77F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00EEA4971A97544F677FEA4E /* Pods-TestWhite&Fluffy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PLUM5QCSG5;
-				INFOPLIST_FILE = "TestWhite&Fluffy/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TestWhite&Fluffy/Apllication/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
