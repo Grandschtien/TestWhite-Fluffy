@@ -13,53 +13,46 @@ class CityWeatherViewController: UIViewController {
     var lat: Double?
     var weather: Weather! = nil
     
-    private let imageView: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "background")
-        return image
-    }()
-    
     private let conditionImage: UIImageView = {
         let image = UIImageView()
-        image.tintColor = UIColor(named: "infoColor")
         image.contentMode = .scaleAspectFill
         return image
     }()
     private let tempLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 70)
-        label.textColor = UIColor(named: "infoColor")
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     private let feelsLikeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 16)
-        label.textColor = UIColor(named: "infoColor")
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     private let windSpeedLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 29)
-        label.textColor = UIColor(named: "infoColor")
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     private let pressureLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 29)
-        label.textColor = UIColor(named: "infoColor")
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     private let additionalWeather: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 29)
-        label.textColor = UIColor(named: "infoColor")
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         label.numberOfLines = 0
         return label
     }()
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 29)
-        label.textColor = UIColor(named: "infoColor")
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
@@ -73,10 +66,13 @@ class CityWeatherViewController: UIViewController {
         setupConstraints()
         self.setupDataToElements()
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
     private func setupVC() {
         title = nameOfCity
-        self.view = imageView
+        self.view.backgroundColor = .white
         //second stackView
         self.secondVerticalStackView = UIStackView(arrangedSubviews: [tempLabel, feelsLikeLabel])
         self.secondVerticalStackView.spacing = 10
@@ -129,13 +125,27 @@ class CityWeatherViewController: UIViewController {
 extension CityWeatherViewController {
     private func checkConditionalImage() -> String {
         switch weather.fact?.condition {
-        case "thunderstorm","thunderstorm-with-rain", "thunderstorm-with-hail": return "cloud.bolt.rain.fill"
-        case "drizzle", "light-rain": return "cloud.drizzle.fill"
-        case "rain", "moderate-rain", "heavy-rain", "continuous-heavy-rain", "showers": return "cloud.rain.fill"
-        case "wet-snow", "light-snow", "snow", "snow-showers": return "cloud.snow.fill"
-        case "hail": return "cloud.hail.fill"
-        case "clear": return "sun.min.fill"
-        case "partly-cloudy", "cloudy", "overcast": return "cloud.fill"
+        case "thunderstorm","thunderstorm-with-rain", "thunderstorm-with-hail":
+            conditionImage.tintColor = #colorLiteral(red: 0.07166468617, green: 0.5014688939, blue: 1, alpha: 1)
+            return "cloud.bolt.rain.fill"
+        case "drizzle", "light-rain":
+            conditionImage.tintColor = #colorLiteral(red: 0.07166468617, green: 0.5014688939, blue: 1, alpha: 1)
+            return "cloud.drizzle.fill"
+        case "rain", "moderate-rain", "heavy-rain", "continuous-heavy-rain", "showers":
+            conditionImage.tintColor = #colorLiteral(red: 0.07166468617, green: 0.5014688939, blue: 1, alpha: 1)
+            return "cloud.rain.fill"
+        case "wet-snow", "light-snow", "snow", "snow-showers":
+            conditionImage.tintColor = #colorLiteral(red: 0.07166468617, green: 0.5014688939, blue: 1, alpha: 1)
+            return "cloud.snow.fill"
+        case "hail":
+            conditionImage.tintColor = #colorLiteral(red: 0.07166468617, green: 0.5014688939, blue: 1, alpha: 1)
+            return "cloud.hail.fill"
+        case "clear":
+            conditionImage.tintColor = #colorLiteral(red: 0.9994240403, green: 0.9075902983, blue: 0.124948792, alpha: 1)
+            return "sun.min.fill"
+        case "partly-cloudy", "cloudy", "overcast":
+            conditionImage.tintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            return "cloud.fill"
         default:
             return "nosign"
         }

@@ -33,6 +33,7 @@ class MainViewController: UIViewController {
         title = "Города"
         navigationItem.searchController = searchController
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction(sender: )))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshAction(sender:)))
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.backgroundColor = .white
         searchController.searchResultsUpdater = self
@@ -147,6 +148,10 @@ extension MainViewController: UITableViewDelegate {
         alerController.addAction(cancelAction)
         alerController.addAction(okAction)
         self.present(alerController, animated: true, completion: nil)
+    }
+    
+    @objc private func refreshAction(sender: UIBarButtonItem) {
+        self.tableView.reloadData()
     }
 }
 

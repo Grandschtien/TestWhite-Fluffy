@@ -63,8 +63,6 @@
 		6015B89326DF9FBD00676FD2 /* CityWeatherScreen */ = {
 			isa = PBXGroup;
 			children = (
-				6015B89626DF9FF900676FD2 /* Model */,
-				6015B89526DF9FED00676FD2 /* View */,
 				6015B89426DF9FE200676FD2 /* Controller */,
 			);
 			path = CityWeatherScreen;
@@ -76,20 +74,6 @@
 				6015B89726DFA01000676FD2 /* CityWeatherViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		6015B89526DF9FED00676FD2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6015B89626DF9FF900676FD2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		602ECD1C26DE51370067B77F = {
