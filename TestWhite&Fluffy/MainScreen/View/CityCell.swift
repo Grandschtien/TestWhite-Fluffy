@@ -55,11 +55,7 @@ class CityCell: UITableViewCell {
         conditionLabel.text = checkCondition(condition: weather.fact?.condition ?? "") 
         temperatureLabel.text = "\(Int(weather.fact?.temp ?? 0)) °C"
     }
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-            super.setSelected(selected, animated: animated)
-        }
+
 }
 
 

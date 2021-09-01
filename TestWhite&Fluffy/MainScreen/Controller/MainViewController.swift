@@ -10,8 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     private let searchController = UISearchController()
-    private let longitudeAndLatitudeArray:[(name: String, lat: Double, lon: Double)] = [("Москва",55.75, 37.62),("Абакан",53.72, 91.43),("Адлер",43.43, 39.92),("Азов",47.11, 39.42),("Александров",56.4, 38.71),("Алексин",54.51, 37.07),("Альметьевск",54.9,  52.32),("Анадырь",64.73, 177.51),("Анапа",44.89, 37.32),("Ангарск",52.54, 103.89),("Астрахань",46.3497, 48.0408)]
-    private var filteredCities = [(name: String, lat: Double, lon: Double)]()
+    private var longitudeAndLatitudeArray:[(name: String, lat: Double, lon: Double, weather: Weather?)] = [("Москва",55.75, 37.62, nil),("Абакан",53.72, 91.43, nil),("Адлер",43.43, 39.92, nil),("Азов",47.11, 39.42, nil),("Александров",56.4, 38.71, nil),("Алексин",54.51, 37.07, nil),("Альметьевск",54.9,  52.32, nil),("Анадырь",64.73, 177.51, nil),("Анапа",44.89, 37.32, nil),("Ангарск",52.54, 103.89, nil),("Астрахань",46.3497, 48.0408, nil)]
+    private var filteredCities = [(name: String, lat: Double, lon: Double, weather: Weather?)]()
     private var tableView: UITableView!
     
     private var searchBarIsEmpty: Bool {
@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
     private func setupNavigationBar() {
         title = "Города"
         navigationItem.searchController = searchController
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.backgroundColor = .white
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Введите город"
@@ -83,8 +85,9 @@ extension MainViewController: UITableViewDataSource {
              lon = longitudeAndLatitudeArray[indexPath.row].lon
              name = longitudeAndLatitudeArray[indexPath.row].name
         }
-        MainNetworkService.shared.fetchWeather(lon: lon, lat: lat) {weather in
+        MainNetworkService.shared.fetchWeather(lon: lon, lat: lat) {[weak self] weather in
             DispatchQueue.main.async {
+                self?.longitudeAndLatitudeArray[indexPath.row].weather = weather
                 cell.configure(nameOf: name, weather: weather)
             }
         }
@@ -95,13 +98,28 @@ extension MainViewController: UITableViewDataSource {
 }
 //MARK:- TableView delegate
 extension MainViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = CityWeatherViewController()
+        if isFiltering {
+            nextVC.nameOfCity = filteredCities[indexPath.row].name
+            nextVC.lat = filteredCities[indexPath.row].lat
+            nextVC.lon = filteredCities[indexPath.row].lon
+            nextVC.weather = filteredCities[indexPath.row].weather
+        }else {
+            nextVC.nameOfCity = longitudeAndLatitudeArray[indexPath.row].name
+            nextVC.lat = longitudeAndLatitudeArray[indexPath.row].lat
+            nextVC.lon = longitudeAndLatitudeArray[indexPath.row].lon
+            nextVC.weather = longitudeAndLatitudeArray[indexPath.row].weather
+        }
+        navigationController?.pushViewController(nextVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 //MARK:- Search delegate
 extension MainViewController{
     private func filterContentOfSearchText(searchText: String) {
-        filteredCities = longitudeAndLatitudeArray.filter({ (name: String, _: Double, _: Double) in
+        filteredCities = longitudeAndLatitudeArray.filter({ (name: String, lat: Double, lon: Double, weather: Weather?) in
             return name.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()

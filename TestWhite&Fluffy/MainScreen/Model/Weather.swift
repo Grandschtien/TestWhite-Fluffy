@@ -40,7 +40,7 @@ struct Fact: Codable {
     let soilMoisture: Double?
     let soilTemp, uvIndex: Double?
     let windGust: Double?
-
+    let phenomCondition: String?
     enum CodingKeys: String, CodingKey {
         case obsTime = "obs_time"
         case uptime, temp
@@ -60,6 +60,7 @@ struct Fact: Codable {
         case soilTemp = "soil_temp"
         case uvIndex = "uv_index"
         case windGust = "wind_gust"
+        case phenomCondition = "phenom_condition"
     }
 }
 
