@@ -40,6 +40,7 @@ class CityWeatherViewController: UIViewController {
     private let windSpeedLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 29)
+        label.textColor = UIColor(named: "infoColor")
         return label
     }()
     private let pressureLabel: UILabel = {
