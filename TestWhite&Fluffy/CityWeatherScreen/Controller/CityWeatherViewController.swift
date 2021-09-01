@@ -40,23 +40,20 @@ class CityWeatherViewController: UIViewController {
     private let windSpeedLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 29)
-        label.textColor = UIColor(named: "infoColor")
-        label.text = "10-15 km/s"
         return label
     }()
     private let pressureLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Kefa", size: 29)
         label.textColor = UIColor(named: "infoColor")
-        label.text = "10-15"
         return label
     }()
-private let additionalWeather: UILabel = {
-    let label = UILabel()
-    label.font = UIFont(name: "Kefa", size: 29)
-    label.textColor = UIColor(named: "infoColor")
-    label.numberOfLines = 0
-    return label
+    private let additionalWeather: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Kefa", size: 29)
+        label.textColor = UIColor(named: "infoColor")
+        label.numberOfLines = 0
+        return label
     }()
     private let dateLabel: UILabel = {
         let label = UILabel()
@@ -181,3 +178,5 @@ extension CityWeatherViewController {
         return formatter.string(from: date as Date)
     }
 }
+
+

@@ -32,12 +32,12 @@ class MainViewController: UIViewController {
     private func setupNavigationBar() {
         title = "Города"
         navigationItem.searchController = searchController
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction(sender: )))
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.backgroundColor = .white
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Введите город"
-        //searchController.delegate = self
     }
     
     private func setupTableView() {
@@ -113,6 +113,40 @@ extension MainViewController: UITableViewDelegate {
         }
         navigationController?.pushViewController(nextVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    @objc private func addAction(sender: UIBarButtonItem) {
+        let alerController = UIAlertController(title: "Введите данные о городе", message: "Пожалуйста, заполните все поля", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: .default) {[weak self] _ in
+            DispatchQueue.main.async {
+                let buffTuple: (name: String, lat: Double, lon: Double, weather: Weather?)
+                guard let name = alerController.textFields?[0].text,
+                      let lat = alerController.textFields?[1].text,
+                      let lon = alerController.textFields?[2].text
+                else { return }
+                buffTuple.name = name
+                guard let lat = Double(lat), let lon = Double(lon) else { return }
+                buffTuple.lat = lat
+                buffTuple.lon = lon
+                buffTuple.weather = nil
+                self?.longitudeAndLatitudeArray.append(buffTuple)
+                self?.tableView.reloadData()
+            }
+            
+        }
+        alerController.addTextField { tf in
+            tf.placeholder = "Название города"
+        }
+        alerController.addTextField { tf in
+            tf.placeholder = "Широта"
+        }
+        alerController.addTextField { tf in
+            tf.placeholder = "Долгота"
+        }
+        alerController.addAction(cancelAction)
+        alerController.addAction(okAction)
+        self.present(alerController, animated: true, completion: nil)
     }
 }
 
